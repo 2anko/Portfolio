@@ -6,6 +6,8 @@ export type Project = {
   role: string;
   tags: string[];
   href?: string;
+  /** Optional one-line "highlight metric" — appears on the card */
+  metric?: { value: string; label: string };
 };
 
 export const projects: Project[] = [
@@ -18,6 +20,7 @@ export const projects: Project[] = [
     role: "Solo — IMI Competition",
     tags: ["Python", "XGBoost", "Scikit-learn", "Pandas"],
     href: "https://github.com/2anko/AML-ML-Model",
+    metric: { value: "70%", label: "fraud recall in top 1% of accounts" },
   },
   {
     slug: "scm-sql",
@@ -28,6 +31,7 @@ export const projects: Project[] = [
     role: "Solo",
     tags: ["Electron", "Node.js", "Fastify", "PostgreSQL", "Docker"],
     href: "https://github.com/2anko/SCM-SQL",
+    metric: { value: "30+", label: "REST endpoints, 12 SQL migrations" },
   },
   {
     slug: "clipstudio",
@@ -38,6 +42,7 @@ export const projects: Project[] = [
     role: "Solo",
     tags: ["Java", "JavaFX", "FFmpeg", "SQLite", "NVENC"],
     href: "https://github.com/2anko/clipstudio",
+    metric: { value: "GPU", label: "auto-detected NVENC export pipeline" },
   },
   {
     slug: "mysh",
@@ -48,5 +53,6 @@ export const projects: Project[] = [
     role: "Solo — University",
     tags: ["C", "POSIX", "Linux", "Sockets", "Make"],
     href: "https://github.com/2anko/mysh",
+    metric: { value: "0 leaks", label: "verified with ASan + LeakSanitizer" },
   },
 ];

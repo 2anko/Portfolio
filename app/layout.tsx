@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { Cursor } from "@/components/Cursor";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -39,7 +41,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
-      <body className="font-sans grain">{children}</body>
+      <body className="font-sans grain selection:bg-accent selection:text-paper">
+        <SmoothScroll />
+        <Cursor />
+        {children}
+      </body>
     </html>
   );
 }
